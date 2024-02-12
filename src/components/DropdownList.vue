@@ -1,5 +1,5 @@
 <template>
-  <div class="dropdown">
+  <span class="dropdown">
     <div @click="selectStore.show = !selectStore.show">
     <span class="dropdown__arrow" />
     <div class="dropdown__selected" >
@@ -16,7 +16,7 @@
     </div>
 
     </div>
-  </div>
+  </span>
 </template>
 
 <script setup lang="ts">
@@ -33,6 +33,8 @@ function dropdownSelect(selectedOnClick: string) {
 
 <style scoped>
 .dropdown {
+  display: inline-block;
+  margin: 1rem;
   width: 20rem;
   height: 2.5rem;
   background-color: whitesmoke;
