@@ -1,20 +1,23 @@
 <template>
   <span class="dropdown">
     <div @click="selectStore.show = !selectStore.show">
-    <span class="dropdown__arrow" />
-    <div class="dropdown__selected" >
-      {{ selectStore.selected }}
+      <span class="dropdown__arrow" />
+      <div class="dropdown__selected">
+        {{ selectStore.selected }}
+      </div>
     </div>
-  </div>
     <div v-if="selectStore.show">
       <div class="dropdown__containter">
-      <DropdownItem v-for="option in selectStore.options" :key="option.id"  @click="dropdownSelect(option.option)">
-        <span class="dropdown_check" v-if="option.option === selectStore.selected" />
-        <span class="dropdown_check--disabled" v-if="option.option !== selectStore.selected" />
-        {{ option.option }}
-      </DropdownItem>
-    </div>
-
+        <DropdownItem
+          v-for="option in selectStore.options"
+          :key="option.id"
+          @click="dropdownSelect(option.option)"
+        >
+          <span class="dropdown_check" v-if="option.option === selectStore.selected" />
+          <span class="dropdown_check--disabled" v-if="option.option !== selectStore.selected" />
+          {{ option.option }}
+        </DropdownItem>
+      </div>
     </div>
   </span>
 </template>
@@ -26,8 +29,8 @@ import { useSelectStore } from '@/stores/select'
 const selectStore = useSelectStore()
 
 function dropdownSelect(selectedOnClick: string) {
-    selectStore.show = false
-    selectStore.selected = selectedOnClick
+  selectStore.show = false
+  selectStore.selected = selectedOnClick
 }
 </script>
 
@@ -43,8 +46,8 @@ function dropdownSelect(selectedOnClick: string) {
   border-radius: 3px;
 }
 
-.dropdown:hover{
-    cursor: pointer;
+.dropdown:hover {
+  cursor: pointer;
 }
 
 .dropdown__arrow {
@@ -53,7 +56,7 @@ function dropdownSelect(selectedOnClick: string) {
   border: solid #595959;
   border-width: 0 1px 1px 0;
   transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);  
+  -webkit-transform: rotate(45deg);
   padding: 0.25rem;
   margin-top: 0.8rem;
   margin-right: 0.7rem;
@@ -64,7 +67,7 @@ function dropdownSelect(selectedOnClick: string) {
   transform: rotate(45deg);
   width: 0.4rem;
   height: 0.8rem;
-  border-bottom:2px solid gray;
+  border-bottom: 2px solid gray;
   border-right: 2px solid gray;
   margin-left: 0.2rem;
   margin-right: 0.4rem;
@@ -86,6 +89,4 @@ function dropdownSelect(selectedOnClick: string) {
   border: 1px solid lightgray;
   border-radius: 3px;
 }
-
-
 </style>
