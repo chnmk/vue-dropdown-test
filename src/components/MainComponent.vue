@@ -17,17 +17,16 @@ import CreateButton from './CreateButton.vue'
 .container {
   background-color: aliceblue;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
-
-  
 }
 .sidebar {
-  min-width: 500px;
-  min-height: 250px;
+  width: 500px;
+  height: 100px;
 }
 
 .entites {
+  color: red;
 }
 </style>

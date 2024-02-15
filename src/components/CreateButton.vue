@@ -1,11 +1,15 @@
 <template>
-  <button class="button" v-if="selectStore.selected !== 'Не выбрано'">Создать</button>
+  <button class="button" v-if="selectStore.selected !== 'Не выбрано'" @click="sendRequest()">Создать</button>
   <button class="button--disabled" v-if="selectStore.selected === 'Не выбрано'">Создать</button>
 </template>
 
 <script setup lang="ts">
 import { useSelectStore } from '@/stores/select'
 const selectStore = useSelectStore()
+
+function sendRequest(){
+ console.log("Request sent!")
+}
 </script>
 
 <style scoped>

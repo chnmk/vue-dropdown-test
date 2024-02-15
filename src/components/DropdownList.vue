@@ -88,5 +88,6 @@ function dropdownSelect(selectedOnClick: string) {
   background-color: white;
   border: 1px solid lightgray;
   border-radius: 3px;
+  position: absolute;
 }
 </style>
